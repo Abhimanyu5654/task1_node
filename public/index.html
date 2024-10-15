@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+                $("div").html('');
+
+                if ($("#fname").val() == "") {
+                    $("#f").html('Please enter your first name...!');
+                    $("#fname").val('');
+                    $("#fname").focus();
+                    return false;
+                }
+                //first name numaric Validation
+                if ($.isNumeric($("#fname").val())) {
+
+                    $("#f").html('Please enter Alphanumeric first name...!');
+                    $("#fname").val('');
+                    $("#fname").focus();
+                    return false;
+                }
+                if ($("#fname").val().length < 3) {
+
+                    $("#f").html('Please enter first name more than 3 latter...!');
+                    $("#fname").val('');
+                    $("#fname").focus();
+                    return false;
+                }
+
+
+                // first name length Validation
+
+
+                //last name empty Validation
+                if ($("#lname").val() == "") {
+                    $("#l").html('please enter your last name...!');
+                    $("#lname").focus();
+                    return false;
+                }
+
+                //last name numaric Validation
+                if ($.isNumeric($("#lname").val())) {
+                    $("#l").html('please enter alphanumeric...!');
+                    $("#lname").val('');
+                    $("#lname").focus();
+                    return false;
+                }
+
+                if ($("#lname").val().length < 3) {
+
+                    $("#l").html('Please enter first name more than 3 latter...!');
+                    $("#lname").val('');
+                    $("#lname").focus();
+                    return false;
+                }
+
+                //mobile no. validation
+                if ($("#mob").val() == "") {
+
+                    // alert("Please enter Mobile no....!");
+                    $("#m").html('Please enter your mobile no....!');
+                    $("#mob").focus();
+                    return false;
+                }
+                if (!($("#mob").val().substring(0, 1).match("[6789]"))) {
+                    // alert("Number must be started at 9,8,7,6");
+                    $("#m").html('Number must be started at 9,8,7,6...!');
+                    $("#mob").val('');
+                    $("#mob").focus();
+                    return false
+                }
+                if ($("#mob").val().length != 10) {
+                    // alert("Please enter no. 10 digite...!");
+                    $("#m").html('Please enter no. 10 digite...!');
+                    $("#mob").val('');
+                    $("#mob").focus();
+                    return false
+
+
+                }
+                if (!$.isNumeric($("#mob").val())) {
+                    // alert("Please enter no. 10 digite...!");
+                    $("#m").html('Please enter digits only...!');
+                    $("#mob").val('');
+                    $("#mob").focus();
+                    return false
+
+
+                }
+
+
+
+
+                //Email validation
+                if ($("#email").val() == "") {
+                    $("#e").html('Please enter your Email id...!');
+                    $("#email").focus();
+                    $("#email").val('');
+                    return false;
+                }
+
+                if (($("#email").val().lastIndexOf('.') - $("#email").val().indexOf('@') || $("#email").val().lastIndexOf('@') - $("#email").val().indexOf('.')) < 2 || $("#email").val().indexOf("@") < 1) {
+                    $("#e").html('Please enter your valid Email id...!');
+                    $("#email").focus();
+                    $("#email").val('');
+                    return false;
+                }
+
+
+
+
+
+                //Address validation
+
+                if ($("#address").val() == "") {
+                    $("#a").html('Please enter your Address...!');
+                    $("#address").val('');
+                    $("#address").focus();
+                    return false;
+                }
+
+                //Street
+
+                if ($("#street").val() == "") {
+                    $("#s").html('Please enter your Street...!');
+                    $("#street").val('');
+                    $("#street").focus();
+                    return false;
+                }
+
+                //city
+
+                if ($("#city").val() == "") {
+                    $("#c").html('Please enter your City...!');
+                    $("#city").val('');
+                    $("#city").focus();
+                    return false;
+                }
+
+                //State
+                if ($("#state").val() == "") {
+                    $("#st").html('Please enter your State...!');
+                    $("#state").val('');
+                    $("#state").focus();
+                    return false;
+                }
+
+                //country
+
+                if ($("#country").val() == "") {
+                    $("#con").html('Please enter your Country...!');
+                    $("#country").val('');
+                    $("#country").focus();
+                    return false;
+                }
+
+                //Login ID
+
+                if ($("#login").val() == "") {
+                    $("#log").html('Please enter your Login id...!');
+                    $("#login").val('');
+                    $("#login").focus();
+                    return false;
+                }
+
+                //password validation
+                if ($("#pass").val() == "") {
+                    $("#p").html('Please enter your your password...!');
+                    $("#pass").focus();
+                    return false;
+                }
+
+                if (!($("#pass").val().match('[a-z]'))) {
+                    $("#p").html('Please enter small latter...!');
+                    $("#pass").val('');
+                    $("#pass").focus();
+                    return false;
+                }
+                if (!($("#pass").val().match('[A-Z]'))) {
+                    $("#p").html('Please enter capital latter...!');
+                    $("#pass").val('');
+                    $("#pass").focus();
+                    return false;
+                }
+                if (!($("#pass").val().match('[0-9]'))) {
+                    $("#p").html('Please enter a numaric value...!');
+                    $("#pass").val('');
+                    $("#pass").focus();
+                    return false;
+                }
+                if (!($("#pass").val().match('[!@#$%^&]'))) {
+                    $("#p").html('Please enter A spasile carecter...!');
+                    $("#pass").val('');
+                    $("#pass").focus();
+                    return false;
+                }
+
+                // alert("Please enter upto 8 Carecter")
+                if ($("#pass").val().length < 8) {
+                    $("#p").html('Please enter more than 8 latter...!');
+                    $("#pass").val('');
+                    $("#pass").focus();
+                    return false;
+                }
+
+
+            })
+
+            $('#btn').on('click', function () {
+
+
+
+                const f_data = {
+                    fname: $('#fname').val(),
+                    lname: $('#lname').val(),
+                    mobile: $('#mob').val(),
+                    email: $('#email').val(),
+                    address: $('#address').val(),
+                    street: $('#street').val(),
+                    city: $('#city').val(),
+                    state: $('#state').val(),
+                    country: $('#country').val(),
+                    login_id: $('#login').val(),
+                    password: $('#pass').val(),
+                }
+
+                $.ajax({
+                    url: 'http://localhost:8888/api/post',
+                    type: 'POST',
+                    // dataType: 'json',
+                    contentType: 'application/json',
+                    data: JSON.stringify(f_data),
+                    success: function (response) {
+                        alert("Submite Success....")
+                    },
+                    error: function (error) {
+                        console.log("Any thing wrong.....", error)
+                    }
+                })
+
+            })
+
+            $('#show_btn').on('click', function () {
+
+                $.ajax({
+                    url: 'http://localhost:8888/api/get',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#data').empty();
+                        data.forEach(item => {
+                            $('#data').append('<li>' +
+                                'Name: ' + item.fname + ' ' + item.lname +
+                                '-:-:- Mobile: ' + item.mobile +
+                                '-:-:- Email: ' + item.email +
+                                '-:-:- Address: ' + item.address + ', ' + item.street + ', ' + item.city + ', ' + item.state + ', ' + item.country +
+                                '-:-:- Login ID: ' + item.login_id +
+                                '-:-:- Creation Time: ' + item.createdAt +
+                                '-:-:- Last Updated On: ' + item.updatedAt +
+                                '</li>'
+                            ); 
+                        })
+                    }
+                })
+            })
+
+              
+
+        })
+
+    </script>
+
+</head>
+
+<body>
+    <form action="#" onsubmit="return validateForm()">
+
+        <table align="center">
+            <tr>
+                <th colspan="2">Registration Form</th>
+            </tr>
+            <tr>
+                <td>First name :</td>
+                <td>
+                    <input type="text" name="fname" id="fname">
+                    <div style="color:red" id="f"></div>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td>
+                    <input type="text" name="lname" id="lname">
+                    <div style="color:red" id="l"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile No :</td>
+                <td>
+                    <input type="text" name="mobile" id="mob">
+                    <div style="color:red" id="m"></div>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email id :</td>
+                <td>
+                    <input type="text" name="email" id="email">
+                    <div style="color:red" id="e"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address : </td>
+                <td>
+                    <input type="text" name="address" id="address">
+                    <div style="color:red" id="a"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Street : </td>
+                <td>
+                    <input type="text" name="street" id="street">
+                    <div style="color:red" id="s"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>City : </td>
+                <td>
+                    <input type="text" name="city" id="city">
+                    <div style="color:red" id="c"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>State : </td>
+                <td>
+                    <input type="text" name="state" id="state">
+                    <div style="color:red" id="st"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Country : </td>
+                <td>
+                    <input type="text" name="country" id="country">
+                    <div style="color:red" id="con"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Login Id :</td>
+                <td>
+                    <input type="text" name="login_id" id="login">
+                    <div style="color:red" id="log"></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Password :</td>
+                <td>
+                    <input type="text" name="password" id="pass">
+                    <div style="color:red" id="p"></div>
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="submit" id="btn">
+                </td>
+
+
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
+    <div align="center">
+        <h3> Fatching data Show :-</h3>
+        <button type="button" id="show_btn">Show Data</button>
+
+    </div>
+
+    <!-- <table align="center">
+        <tr>
+        </tr>
+        <br>
+        <tr id="data"></tr>
+    </table> -->
+
+    <div>
+        <ul id="data"></ul>
+    </div>
+</body>
+
+</html>

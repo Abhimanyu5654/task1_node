@@ -1,0 +1,24 @@
+const express=require('express')
+// const mongoose=require('mongoose')
+const bodyparser=require('body-parser')
+const connection=require('./db')
+const cors=require('cors')
+const userRouter=require('./controler/controler')
+
+const app=express()
+const port=8888
+connection()
+app.use(cors())
+app.use(express.json())
+app.use(bodyparser.json())
+app.use(express.urlencoded({ extended: true }));
+// app.use((req, res, next) => {
+//     res.locals.path = req.path;
+//     next();
+// });
+
+app.use('/api',userRouter)
+
+app.listen(port,()=>{
+    console.log(`Server runing on ${port}`)
+})
