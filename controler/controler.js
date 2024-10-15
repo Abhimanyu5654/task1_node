@@ -14,11 +14,11 @@ router.get('/get',(req,res)=>{
     })
 })
 router.post('/post',(req,res)=>{
-    const user=new Users(req.body);
+    const user=new Users({...req.body});
     user.save()
     .then((result)=>{
-        res.send(result)
-        console.log(result)
+        res.status(200).send('Data saved successfully',result);
+        
     })
     .catch((err)=>{
         res.status(405).send(err)
