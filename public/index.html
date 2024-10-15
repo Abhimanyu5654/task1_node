@@ -234,25 +234,25 @@
                 }
 
                 $.ajax({
-                    url: 'http://localhost:8888/api/post',
+                    url: 'https://task1-node-2tqv.onrender.com/api/post',
                     type: 'POST',
                     // dataType: 'json',
                     contentType: 'application/json',
                     data: JSON.stringify(f_data),
                     success: function (response) {
                         alert("Submite Success....")
+                        console.log('Successfully submited')
                     },
                     error: function (error) {
                         console.log("Any thing wrong.....", error)
                     }
                 })
-
             })
 
             $('#show_btn').on('click', function () {
 
                 $.ajax({
-                    url: 'http://localhost:8888/api/get',
+                    url: 'https://task1-node-2tqv.onrender.com/api/get',
                     type: 'GET',
                     success: function (data) {
                         $('#data').empty();
