@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 //     next();
 // });
 
-app.use('/api',userRouter)
+app.use('/',userRouter)
 
 app.listen(port,()=>{
     console.log(`Server runing on ${port}`)

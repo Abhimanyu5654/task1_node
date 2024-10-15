@@ -13,7 +13,7 @@ router.get('/get',(req,res)=>{
         console.log(error)
     })
 })
-router.post('/post',(req,res)=>{
+router.post('/',(req,res)=>{
     const user=new Users({...req.body});
     user.save()
     .then((result)=>{

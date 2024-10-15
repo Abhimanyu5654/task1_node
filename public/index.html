@@ -234,7 +234,7 @@
                 }
 
                 $.ajax({
-                    url: 'https://task1-node-2tqv.onrender.com/api/post',
+                    url: 'https://task1-node-2tqv.onrender.com',
                     type: 'POST',
                     // dataType: 'json',
                     contentType: 'application/json',
@@ -252,7 +252,7 @@
             $('#show_btn').on('click', function () {
 
                 $.ajax({
-                    url: 'https://task1-node-2tqv.onrender.com/api/get',
+                    url: 'https://task1-node-2tqv.onrender.com/get',
                     type: 'GET',
                     success: function (data) {
                         $('#data').empty();
