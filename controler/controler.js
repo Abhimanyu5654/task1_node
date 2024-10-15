@@ -18,6 +18,7 @@ router.post('/post',(req,res)=>{
     user.save()
     .then((result)=>{
         res.send(result)
+        console.log(result)
     })
     .catch((err)=>{
         res.status(405).send(err)
