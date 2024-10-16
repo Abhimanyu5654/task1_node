@@ -201,6 +201,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify(f_data),
                     success: function(response) {
+                        console.log("hollo")
                         alert('Data saved successfully!');
                     },
                     error: function(error) {
@@ -238,7 +239,7 @@
 </head>
 
 <body>
-    <form action="#" onsubmit="return false;">
+    <form action="#" onsubmit="return validateForm();">
 
         <table align="center">
             <tr>
