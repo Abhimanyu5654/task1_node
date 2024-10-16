@@ -15,8 +15,10 @@ router.get('/get',(req,res)=>{
 })
 router.post('/post',(req,res)=>{
     const user=new Users({...req.body});
+    console.log('hello')
     user.save()
     .then((result)=>{
+        console.log('hiii')
         res.status(200).send('Data saved successfully',result);
         
     })

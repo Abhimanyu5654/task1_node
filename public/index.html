@@ -212,12 +212,9 @@
                     return false;
                 }
 
-
             })
 
             $('#btn').on('click', function () {
-
-
 
                 const f_data = {
                     fname: $('#fname').val(),
@@ -240,6 +237,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify(f_data),
                     success: function (response) {
+                        console.log("helloooooo")
                         alert("Submite Success....")
                         console.log('Successfully submited')
                     },
@@ -270,9 +268,7 @@
                         })
                     }
                 })
-            })
-
-              
+            })            
 
         })
 
