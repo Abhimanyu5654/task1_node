@@ -20,30 +20,30 @@ const schema=new mongoose.Schema({
         trim:true,
         lowercase:true
     },
-    // address:{
-    //     type:String,
-    //     required:[true, 'Please enter Address...']
-    // },
-    // street:{
-    //     type:String,
-    //     required:[true, 'Please enter Street']
-    // },
-    // city:{
-    //     type:String,
-    //     required:[true, 'Please enter City']
-    // },
-    // state:{
-    //     type:String,
-    //     required:[true, 'Please enter State']
-    // },
-    // country:{
-    //     type:String,
-    //     required:[true, 'Please enter Country']
-    // },
-    // login_id:{
-    //     type:String,
-    //     required:[true, "login ID is required..."]
-    // },
+    address:{
+        type:String,
+        required:[true, 'Please enter Address...']
+    },
+    street:{
+        type:String,
+        required:[true, 'Please enter Street']
+    },
+    city:{
+        type:String,
+        required:[true, 'Please enter City']
+    },
+    state:{
+        type:String,
+        required:[true, 'Please enter State']
+    },
+    country:{
+        type:String,
+        required:[true, 'Please enter Country']
+    },
+    login_id:{
+        type:String,
+        required:[true, "login ID is required..."]
+    },
     password:{
         type:String,
         required:[true, "Password is required..."]
