@@ -227,24 +227,21 @@
                     state: $('#state').val(),
                     country: $('#country').val(),
                     login_id: $('#login').val(),
-                    password: $('#pass').val(),
+                    password: $('#pass').val()
                 }
 
                 $.ajax({
                     url: 'https://task1-node-2tqv.onrender.com/post',
                     type: 'POST',
-                    dataType: 'json',
                     contentType: 'application/json',
                     data: JSON.stringify(f_data),
-                    success: function (response) {
-                        console.log("helloooooo",f_data)
-                        alert("Submite Success....")
-                        console.log('Successfully submited')
+                    success: function(response) {
+                        alert('Data saved successfully!');
                     },
-                    error: function (error) {
-                        console.log("Any thing wrong.....", error)
+                    error: function(error) {
+                        console.error('Error saving data:', error);
                     }
-                })
+                });
             })
 
             $('#show_btn').on('click', function () {
