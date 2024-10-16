@@ -14,7 +14,7 @@ router.get('/get',(req,res)=>{
     })
 })
 router.post('/post',(req,res)=>{
-    const user=new Users({...req.body});
+    const user=new Users(req.body);
     console.log('hello')
     user.save()
     .then((result)=>{

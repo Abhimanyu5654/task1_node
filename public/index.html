@@ -181,32 +181,35 @@
                 }
 
                 // If all validations pass, proceed to submit the data
-                const f_data = {
-                    fname: $('#fname').val(),
-                    lname: $('#lname').val(),
-                    mobile: $('#mob').val(),
-                    email: $('#email').val(),
-                    address: $('#address').val(),
-                    street: $('#street').val(),
-                    city: $('#city').val(),
-                    state: $('#state').val(),
-                    country: $('#country').val(),
-                    login_id: $('#login').val(),
-                    password: $('#pass').val()
-                }
+                $('#btn').on('click', function () {
 
-                $.ajax({
-                    url: 'https://task1-node-2tqv.onrender.com/post',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(f_data),
-                    success: function(response) {
-                        console.log("hollo")
-                        alert('Data saved successfully!');
-                    },
-                    error: function(error) {
-                        console.error('Error saving data:', error);
+                    const f_data = {
+                        fname: $('#fname').val(),
+                        lname: $('#lname').val(),
+                        mobile: $('#mob').val(),
+                        email: $('#email').val(),
+                        address: $('#address').val(),
+                        street: $('#street').val(),
+                        city: $('#city').val(),
+                        state: $('#state').val(),
+                        country: $('#country').val(),
+                        login_id: $('#login').val(),
+                        password: $('#pass').val()
                     }
+
+                    $.ajax({
+                        url: 'https://task1-node-2tqv.onrender.com/post',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(f_data),
+                        success: function (response) {
+                            console.log("hollo")
+                            alert('Data saved successfully!');
+                        },
+                        error: function (error) {
+                            console.error('Error saving data:', error);
+                        }
+                    });
                 });
             });
 
@@ -226,7 +229,7 @@
                                 ' - Creation Time: ' + item.createdAt +
                                 ' - Last Updated On: ' + item.updatedAt +
                                 '</li>'
-                            ); 
+                            );
                         });
                     }
                 });
