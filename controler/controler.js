@@ -8,6 +8,7 @@ router.get('/get',(req,res)=>{
     .then((user)=>{
         res.json(user)
         console.log('SuccessFully done')
+        console.log(user)
     })
     .catch((error)=>{
         console.log(error)

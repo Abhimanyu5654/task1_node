@@ -143,38 +143,41 @@
                     return false;
                 }
 
-                // Password validation
+                //password validation
                 if ($("#pass").val() == "") {
-                    $("#p").html('Please enter your password...!');
+                    $("#p").html('Please enter your your password...!');
                     $("#pass").focus();
                     return false;
                 }
+
                 if (!($("#pass").val().match('[a-z]'))) {
-                    $("#p").html('Please enter a lowercase letter...!');
+                    $("#p").html('Please enter small latter...!');
                     $("#pass").val('');
                     $("#pass").focus();
                     return false;
                 }
                 if (!($("#pass").val().match('[A-Z]'))) {
-                    $("#p").html('Please enter an uppercase letter...!');
+                    $("#p").html('Please enter capital latter...!');
                     $("#pass").val('');
                     $("#pass").focus();
                     return false;
                 }
                 if (!($("#pass").val().match('[0-9]'))) {
-                    $("#p").html('Please enter a numeric value...!');
+                    $("#p").html('Please enter a numaric value...!');
                     $("#pass").val('');
                     $("#pass").focus();
                     return false;
                 }
                 if (!($("#pass").val().match('[!@#$%^&]'))) {
-                    $("#p").html('Please enter a special character...!');
+                    $("#p").html('Please enter A spasile carecter...!');
                     $("#pass").val('');
                     $("#pass").focus();
                     return false;
                 }
+
+                // alert("Please enter upto 8 Carecter")
                 if ($("#pass").val().length < 8) {
-                    $("#p").html('Please enter more than 8 characters...!');
+                    $("#p").html('Please enter more than 8 latter...!');
                     $("#pass").val('');
                     $("#pass").focus();
                     return false;
@@ -204,6 +207,7 @@
                         data: JSON.stringify(f_data),
                         success: function (response) {
                             console.log("hollo")
+                            status(300)
                             alert('Data saved successfully!');
                         },
                         error: function (error) {
@@ -329,7 +333,7 @@
             <tr>
                 <td>Password :</td>
                 <td>
-                    <input type="password" name="password" id="pass">
+                    <input type="text" name="password" id="pass">
                     <div style="color:red" id="p"></div>
                 </td>
 
@@ -339,8 +343,6 @@
                 <td>
                     <input type="submit" value="submit" id="btn">
                 </td>
-
-
             </tr>
         </table>
     </form>
