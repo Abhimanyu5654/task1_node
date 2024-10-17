@@ -230,9 +230,9 @@
                 }
 
                 $.ajax({
-                    url: 'http://localhost:8000/api/post',
+                    url: 'https://task1-node-2tqv.onrender.com/post',
                     type: 'POST',
-                    // dataType: 'json',
+                    dataType: 'text',
                     contentType: 'application/json',
                     data: JSON.stringify(f_data),
                     success: function (response) {
@@ -249,7 +249,7 @@
             $('#show_btn').on('click', function () {
 
                 $.ajax({
-                    url: 'http://localhost:8000/api/get',
+                    url: 'https://task1-node-2tqv.onrender.com/get',
                     type: 'GET',
                     success: function (data) {
                         $('#data').empty();
